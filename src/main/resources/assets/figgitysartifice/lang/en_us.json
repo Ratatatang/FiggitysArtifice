@@ -1,0 +1,10 @@
+{
+  "item.figgitysartifice.devil_coin": "Devil Coin Modifier",
+  "item.figgitysartifice.jester_shot": "Jestershot Modifier",
+  "item.figgitysartifice.frag_bullet": "Brittle Bullet Modifier",
+  "item.figgitysartifice.rubber_bullet": "Rubber Bullet Modifier",
+  "item.figgitysartifice.high_velocity_bullet": "High-Velocity Bullet Modifier",
+
+  "figgitysartifice.modifier.frag_bullet_pierce": "+1 Pierce",
+  "figgitysartifice.modifier.frag_bullet": "+%s Shrapnel on Hit (%s%% Damage Each)"
+}

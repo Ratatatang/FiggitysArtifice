@@ -1,0 +1,85 @@
+package com.figgity.figgitysartifice.item.modifier;
+
+import io.redspace.irons_artifice.client.particle.ColorTransitionParticleOption;
+import io.redspace.irons_artifice.data.ParticleStack;
+import io.redspace.irons_artifice.data.ShotComponentMap;
+import io.redspace.irons_artifice.data.ShotComponents;
+import io.redspace.irons_artifice.data.Value;
+import io.redspace.irons_artifice.entity.Bullet;
+import io.redspace.irons_artifice.gun.HitEntityAccumulator;
+import io.redspace.irons_artifice.modifier.OnHitEffect;
+import io.redspace.irons_artifice.gun.ShotProfile;
+import io.redspace.irons_artifice.modifier.on_hit_handlers.FrozenShrapnelOnHit;
+import io.redspace.irons_artifice.registry.EntityRegistry;
+import io.redspace.irons_artifice.registry.ParticleRegistry;
+import io.redspace.irons_artifice.utils.Utils;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
+
+public class ShrapnelOnHit extends FrozenShrapnelOnHit {
+    public static final int SHRAPNEL_COUNT = 5;
+    public static final float DAMAGE_FRACTION = 0.15f;
+    public static final float SPEED = 2.5f;
+    public static final float DRAG = 0.8f;
+    public static final float CONE_HALF_ANGLE_DEG = 30f;
+    public static final float SPAWN_OFFSET = 0.1f;
+
+    @Override
+    public void onHit(ServerLevel level, Bullet bullet, HitResult hitResult, HitEntityAccumulator accumulator) {
+        ShotProfile parentProfile = bullet.getProfile();
+        if (parentProfile == null) {
+            return;
+        }
+
+        Vec3 incoming = bullet.getDeltaMovement();
+        if (incoming.lengthSqr() < 1.0E-8) {
+            return;
+        }
+        Vec3 axis = incoming.normalize();
+        if (hitResult instanceof BlockHitResult blockHit) {
+            axis = Utils.reflect(incoming, Vec3.atLowerCornerOf(blockHit.getDirection().getNormal())).normalize();
+            if (axis.lengthSqr() < 1.0E-8) {
+                return;
+            }
+        }
+
+        Vec3 origin = hitResult.getLocation().add(axis.scale(SPAWN_OFFSET));
+        Entity hitEntity = hitResult instanceof EntityHitResult entityHit ? entityHit.getEntity() : null;
+        float childDamage = bullet.resolveDamage() * DAMAGE_FRACTION;
+        RandomSource random = level.getRandom();
+        for (int i = 0; i < SHRAPNEL_COUNT; i++) {
+            Vec3 direction = Utils.directionWithinCone(axis, CONE_HALF_ANGLE_DEG, random);
+            ShotProfile childProfile = createChildProfile(parentProfile, childDamage);
+            Bullet child = new Bullet(EntityRegistry.BULLET.get(), level);
+            child.setOwner(bullet.getOwner());
+            child.applyProfile(childProfile);
+            if (bullet.getShotRecord() != null) {
+                child.setShotRecord(bullet.getShotRecord().child(hitResult instanceof BlockHitResult));
+            }
+            child.setPos(origin);
+            if (hitEntity != null) {
+                child.markPierced(hitEntity);
+            }
+            child.shoot(direction.x, direction.y, direction.z, SPEED, 0f);
+            level.addFreshEntity(child);
+        }
+    }
+
+    private static ShotProfile createChildProfile(ShotProfile parent, float damage) {
+        ShotProfile child = parent.deepCopy();
+        ShotComponentMap components = child.components();
+
+        components.set(ShotComponents.DAMAGE, Value.of(damage));
+        components.set(ShotComponents.PROJECTILE_COUNT, Value.of(1));
+        components.set(ShotComponents.BULLET_SPEED, Value.of(SPEED));
+        components.set(ShotComponents.BULLET_DRAG, Value.of(DRAG));
+
+        components.getOrCreate(ShotComponents.ON_HIT).remove(FrozenShrapnelOnHit.class);
+        return child;
+    }
+}
