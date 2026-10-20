@@ -36,7 +36,7 @@ public class FiggitysArtifice {
         //Add to arms n artifice creative tab
         modEventBus.addListener(this::buildCreativeTab);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        //modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
