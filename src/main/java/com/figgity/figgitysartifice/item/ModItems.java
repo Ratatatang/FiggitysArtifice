@@ -25,6 +25,9 @@ public class ModItems {
     public static final DeferredItem<ModifierItem> FRAG_BULLET = ITEMS.registerItem(
             "frag_bullet", properties -> new ModifierItem(properties.stacksTo(1), new FragBulletModifier()));
 
+    public static final DeferredItem<ModifierItem> GEYSER_CORE = ITEMS.registerItem(
+            "geyser_core", properties -> new ModifierItem(properties.stacksTo(1), new GeyserCoreModifier()));
+
     public static final DeferredItem<ModifierItem> RUBBER_BULLET = ITEMS.registerItem(
             "rubber_bullet", properties -> new ModifierItem(properties.stacksTo(1), new RubberBulletModifier()));
 

@@ -5,11 +5,15 @@
   "item.figgitysartifice.rubber_bullet": "Rubber Bullet Modifier",
   "item.figgitysartifice.high_velocity_bullet": "High-Velocity Bullet Modifier",
   "item.figgitysartifice.sculk_bullet": "Sculk Bullet Modifier",
+  "item.figgitysartifice.geyser_core": "Geyser Core Modifier",
 
   "figgitysartifice.modifier.frag_bullet_pierce": "+1 Pierce",
   "figgitysartifice.modifier.frag_bullet": "+%s Shrapnel on Hit (%s%% Damage Each)",
 
   "figgitysartifice.modifier.sculk_bullet": "+%ss Echoing on Hit",
-  "figgitysartifice.modifier.sculk_bullet_damage": "110% Damage",
-  "figgitysartifice.modifier.sculk_bullet_recoil": "120% Recoil"
+  "figgitysartifice.modifier.sculk_bullet_damage": "1%s%% Damage",
+  "figgitysartifice.modifier.sculk_bullet_recoil": "1%s%% Recoil",
+
+  "figgitysartifice.modifier.geyser_core": "Sprays %s Drops of Water on Hit (%s%% Damage Per Drop)",
+  "figgitysartifice.modifier.geyser_core_water": "+%s Water Damage"
 }
