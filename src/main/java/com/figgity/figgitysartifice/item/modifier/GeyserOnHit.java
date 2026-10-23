@@ -1,5 +1,6 @@
 package com.figgity.figgitysartifice.item.modifier;
 
+import com.mojang.logging.LogUtils;
 import io.redspace.irons_artifice.client.particle.ColorTransitionParticleOption;
 import io.redspace.irons_artifice.data.ParticleStack;
 import io.redspace.irons_artifice.data.ShotComponentMap;
@@ -12,6 +13,7 @@ import io.redspace.irons_artifice.modifier.on_hit_handlers.FrozenShrapnelOnHit;
 import io.redspace.irons_artifice.registry.EntityRegistry;
 import io.redspace.irons_artifice.registry.ParticleRegistry;
 import io.redspace.irons_artifice.utils.Utils;
+import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -45,10 +47,14 @@ public class GeyserOnHit extends FrozenShrapnelOnHit {
         }
         Vec3 axis = incoming.normalize();
         if (hitResult instanceof BlockHitResult blockHit) {
-            axis = Utils.reflect(new Vec3(0, -1, 0), Vec3.atLowerCornerOf(blockHit.getDirection().getNormal())).normalize();
+            Vec3i blockHitNormal = blockHit.getDirection().getNormal();
+            axis = Utils.reflect(new Vec3(-blockHitNormal.getX(), -blockHitNormal.getY(), -blockHitNormal.getZ()) , Vec3.atLowerCornerOf(blockHit.getDirection().getNormal())).normalize();
             if (axis.lengthSqr() < 1.0E-8) {
                 return;
             }
+        }
+        else if (hitResult instanceof EntityHitResult entityHit) {
+            axis = new Vec3(0, 1, 0);
         }
 
         Vec3 origin = hitResult.getLocation().add(axis.scale(SPAWN_OFFSET));
@@ -68,7 +74,7 @@ public class GeyserOnHit extends FrozenShrapnelOnHit {
             if (hitEntity != null) {
                 child.markPierced(hitEntity);
             }
-            child.shoot(direction.x, Mth.abs((float) direction.y / 3), direction.z, SPEED, 0f);
+            child.shoot(direction.x * 1.5, Mth.abs((float) direction.y / 3), direction.z * 1.5, SPEED, 0f);
             level.addFreshEntity(child);
         }
     }
