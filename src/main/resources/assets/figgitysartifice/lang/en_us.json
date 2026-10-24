@@ -6,6 +6,7 @@
   "item.figgitysartifice.high_velocity_bullet": "High-Velocity Bullet Modifier",
   "item.figgitysartifice.sculk_bullet": "Sculk Bullet Modifier",
   "item.figgitysartifice.geyser_core": "Geyser Core Modifier",
+  "item.figgitysartifice.holy_round": "Holy Round Modifier",
 
   "figgitysartifice.modifier.frag_bullet_pierce": "+1 Pierce",
   "figgitysartifice.modifier.frag_bullet": "+%s Shrapnel on Hit (%s%% Damage Each)",
@@ -15,5 +16,9 @@
   "figgitysartifice.modifier.sculk_bullet_recoil": "1%s%% Recoil",
 
   "figgitysartifice.modifier.geyser_core": "Sprays %s Drops of Water on Hit (%s%% Damage Per Drop)",
-  "figgitysartifice.modifier.geyser_core_water": "+%s Water Damage"
+  "figgitysartifice.modifier.geyser_core_water": "+%s Water Damage",
+
+  "figgitysartifice.modifier.holy_round_smite": "+%s Damage to Undead",
+  "figgitysartifice.modifier.holy_round_illager": "+%s Damage to Illagers",
+  "figgitysartifice.modifier.holy_round_damage": "95% Damage"
 }

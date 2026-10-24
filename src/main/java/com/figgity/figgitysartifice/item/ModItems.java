@@ -31,6 +31,9 @@ public class ModItems {
     public static final DeferredItem<ModifierItem> RUBBER_BULLET = ITEMS.registerItem(
             "rubber_bullet", properties -> new ModifierItem(properties.stacksTo(1), new RubberBulletModifier()));
 
+    public static final DeferredItem<ModifierItem> HOLY_ROUND = ITEMS.registerItem(
+            "holy_round", properties -> new ModifierItem(properties.stacksTo(1), new HolyRoundModifier()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
