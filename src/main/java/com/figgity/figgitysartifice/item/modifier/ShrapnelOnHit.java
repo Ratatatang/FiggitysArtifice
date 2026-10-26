@@ -1,17 +1,13 @@
 package com.figgity.figgitysartifice.item.modifier;
 
-import io.redspace.irons_artifice.client.particle.ColorTransitionParticleOption;
-import io.redspace.irons_artifice.data.ParticleStack;
 import io.redspace.irons_artifice.data.ShotComponentMap;
 import io.redspace.irons_artifice.data.ShotComponents;
 import io.redspace.irons_artifice.data.Value;
 import io.redspace.irons_artifice.entity.Bullet;
 import io.redspace.irons_artifice.gun.HitEntityAccumulator;
-import io.redspace.irons_artifice.modifier.OnHitEffect;
 import io.redspace.irons_artifice.gun.ShotProfile;
 import io.redspace.irons_artifice.modifier.on_hit_handlers.FrozenShrapnelOnHit;
 import io.redspace.irons_artifice.registry.EntityRegistry;
-import io.redspace.irons_artifice.registry.ParticleRegistry;
 import io.redspace.irons_artifice.utils.Utils;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;

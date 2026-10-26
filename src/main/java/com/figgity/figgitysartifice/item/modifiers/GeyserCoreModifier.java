@@ -1,22 +1,16 @@
 package com.figgity.figgitysartifice.item.modifiers;
 
 import com.figgity.figgitysartifice.item.modifier.GeyserOnHit;
-import com.figgity.figgitysartifice.item.modifier.ShrapnelOnHit;
-import com.figgity.figgitysartifice.item.modifier.SmiteDamagePostHit;
 import io.redspace.irons_artifice.client.particle.ColorTransitionParticleOption;
 import io.redspace.irons_artifice.data.PlayableSound;
 import io.redspace.irons_artifice.data.ShotComponentMap;
 import io.redspace.irons_artifice.data.ShotComponents;
 import io.redspace.irons_artifice.modifier.GunModifier;
 import com.figgity.figgitysartifice.item.modifier.WaterDamagePostHit;
-import io.redspace.irons_artifice.registry.SoundRegistry;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
+
 import net.minecraft.sounds.SoundEvents;
 
 import java.util.function.Consumer;
@@ -26,7 +20,6 @@ public class GeyserCoreModifier implements GunModifier {
 
     @Override
     public void apply(ShotComponentMap components) {
-        //components.getOrCreate(ShotComponents.PIERCING).addModifier(new ValueModifier(1.0, ValueModifier.Operation.ADD, ValueModifier.Type.BENEFICIAL));
         components.getOrCreate(ShotComponents.ON_HIT).add(new GeyserOnHit());
         components.getOrCreate(ShotComponents.POST_HIT_EFFECTS).getOrCreate(WaterDamagePostHit.class, WaterDamagePostHit::new).addStack();
 

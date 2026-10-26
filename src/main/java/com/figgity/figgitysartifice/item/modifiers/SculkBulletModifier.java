@@ -1,17 +1,14 @@
 package com.figgity.figgitysartifice.item.modifiers;
 
 import com.figgity.figgitysartifice.item.modifier.EchoPostHit;
-import com.figgity.figgitysartifice.item.modifier.GeyserOnHit;
 import io.redspace.irons_artifice.client.particle.ColorTransitionParticleOption;
 import io.redspace.irons_artifice.data.*;
 import io.redspace.irons_artifice.modifier.GunModifier;
-import io.redspace.irons_artifice.modifier.ValueStackModifier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 
-import java.util.Map;
 import java.util.function.Consumer;
 
 public final class SculkBulletModifier implements GunModifier {

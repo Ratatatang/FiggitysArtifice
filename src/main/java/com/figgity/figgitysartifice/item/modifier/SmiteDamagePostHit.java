@@ -1,10 +1,8 @@
 package com.figgity.figgitysartifice.item.modifier;
 
-import com.mojang.logging.LogUtils;
 import io.redspace.irons_artifice.entity.Bullet;
 import io.redspace.irons_artifice.modifier.PostHitEffect;
 import io.redspace.irons_artifice.utils.Utils;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.damagesource.DamageSource;

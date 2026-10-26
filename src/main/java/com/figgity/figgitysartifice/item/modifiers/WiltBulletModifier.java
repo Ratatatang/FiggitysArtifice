@@ -1,7 +1,5 @@
 package com.figgity.figgitysartifice.item.modifiers;
 
-import com.figgity.figgitysartifice.item.modifier.EchoPostHit;
-import com.figgity.figgitysartifice.item.modifier.SmiteDamagePostHit;
 import com.figgity.figgitysartifice.item.modifier.WitherCostOnShot;
 import com.figgity.figgitysartifice.item.modifier.WitherPostHit;
 import io.redspace.irons_artifice.data.ShotComponentMap;

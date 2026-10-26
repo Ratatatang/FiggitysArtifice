@@ -1,17 +1,11 @@
 package com.figgity.figgitysartifice.item.modifier;
 
-import com.figgity.figgitysartifice.item.modifiers.WiltBulletModifier;
-import io.redspace.irons_artifice.entity.Bullet;
 import io.redspace.irons_artifice.gun.ShotProfile;
 import io.redspace.irons_artifice.modifier.OnShotEffect;
-import io.redspace.irons_artifice.modifier.modifiers.LeechModifier;
-import io.redspace.irons_artifice.utils.Utils;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.phys.HitResult;
 
 public final class WitherCostOnShot implements OnShotEffect {
     private int durationTicks;

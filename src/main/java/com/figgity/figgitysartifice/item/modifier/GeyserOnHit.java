@@ -1,6 +1,5 @@
 package com.figgity.figgitysartifice.item.modifier;
 
-import com.mojang.logging.LogUtils;
 import io.redspace.irons_artifice.client.particle.ColorTransitionParticleOption;
 import io.redspace.irons_artifice.data.ParticleStack;
 import io.redspace.irons_artifice.data.ShotComponentMap;
