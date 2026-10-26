@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "irons_artifice:blackpowder"
+    },
+    "K": {
+      "item": "minecraft:kelp"
+    },
+    "H": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "L": {
+      "item": "minecraft:lapis_lazuli"
+    }
+  },
+  "pattern": [
+    " LL",
+    "KHL",
+    "BK "
+  ],
+  "result": {
+    "count": 1,
+    "id": "figgitysartifice:geyser_core"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "irons_artifice:blackpowder"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "R": {
+      "item": "figgitysartifice:rubber_bullet"
+    }
+  },
+  "pattern": [
+    " RR",
+    "SBR",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "figgitysartifice:jester_shot"
+  }
+}

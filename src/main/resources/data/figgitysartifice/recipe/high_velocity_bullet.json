@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "irons_artifice:blackpowder"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "P": {
+      "item": "minecraft:blaze_powder"
+    }
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    "GBG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "figgitysartifice:high_velocity_bullet"
+  }
+}

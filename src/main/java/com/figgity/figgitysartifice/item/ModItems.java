@@ -19,6 +19,9 @@ public class ModItems {
     public static final DeferredItem<ModifierItem> SCULK_BULLET = ITEMS.registerItem(
             "sculk_bullet", properties -> new ModifierItem(properties.stacksTo(1), new SculkBulletModifier()));
 
+    public static final DeferredItem<ModifierItem> WILT_BULLET = ITEMS.registerItem(
+            "wilt_bullet", properties -> new ModifierItem(properties.stacksTo(1), new WiltBulletModifier()));
+
     public static final DeferredItem<ModifierItem> JESTER_SHOT = ITEMS.registerItem(
                     "jester_shot", properties -> new ModifierItem(properties.stacksTo(1), new JesterShotModifier()));
 

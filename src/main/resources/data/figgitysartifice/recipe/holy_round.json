@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "irons_artifice:bullet"
+    },
+    "G": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "O": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "pattern": [
+    " O ",
+    "GBG",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "figgitysartifice:holy_round"
+  }
+}

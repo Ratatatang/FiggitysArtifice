@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "irons_artifice:blackpowder"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "S": {
+      "item": "minecraft:echo_shard"
+    }
+  },
+  "pattern": [
+    " G ",
+    "GSG",
+    "GBG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "figgitysartifice:sculk_bullet"
+  }
+}

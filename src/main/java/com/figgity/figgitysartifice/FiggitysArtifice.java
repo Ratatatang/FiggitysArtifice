@@ -1,5 +1,6 @@
 package com.figgity.figgitysartifice;
 
+import com.figgity.figgitysartifice.effect.ModEffects;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -32,6 +33,8 @@ public class FiggitysArtifice {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+
+        //ModEffects.register(modEventBus);
 
         //Add to arms n artifice creative tab
         modEventBus.addListener(this::buildCreativeTab);

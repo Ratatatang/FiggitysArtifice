@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "irons_artifice:blackpowder"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "R": {
+      "item": "minecraft:wither_rose"
+    }
+  },
+  "pattern": [
+    " G ",
+    "GRG",
+    "GBG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "figgitysartifice:wilt_bullet"
+  }
+}

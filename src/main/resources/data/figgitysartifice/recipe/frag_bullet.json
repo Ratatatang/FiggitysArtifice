@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "irons_artifice:blackpowder"
+    },
+    "G": {
+      "item": "minecraft:copper_grate"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    " C ",
+    " G ",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "figgitysartifice:frag_bullet"
+  }
+}
